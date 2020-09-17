@@ -2,7 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import pickle
 
+def importAlgo():
+    CV, NB = pickle.load(open('algo.pkl','rb'))
+    return (CV,NB)
+CV,NB = importAlgo()
 
 def main():
     """Run administrative tasks."""

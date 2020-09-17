@@ -4,6 +4,8 @@
     <list default="true" id="7c3b0d5b-15eb-4ca3-862a-dbaed9d3eeef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spamator/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/spamator/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spamator/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/spamator/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spamator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/spamator/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +30,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -60,7 +62,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

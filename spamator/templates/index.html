@@ -27,43 +27,22 @@
     </div>
     <div class="two"><h3 id="h-two">Spamator</h3></div>
 </div>
-{% if messages %}
-    {% for message in messages %}
-        {% if message.tags == 'warning' %}
-            <div class="pop-up">
+            <div class="pop-up" id="p1">
                 <center>
-                    <div class="pop-up-main">
+                    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                    <div class="pop-up-main" id="p2">
                         <img src="{% static 'images/spam.png' %}" alt="ALERT"/><br/><br/>
                         <div class="cancel-btn">CHECK AGAIN</div>
                         <span>SPAM!</span>
                     </div>
-                </center>
-            </div>
-        {% endif %}
-        {% if message.tags == 'success' %}
-            <div class="pop-up">
-                <center>
-                    <div class="pop-up-main">
+                    <div class="pop-up-main" id="p4">
                         <img src="{% static 'images/ham1.png' %}" alt="ALERT" style="height:80px;width:80px;"/><br/><br/>
                         <div class="cancel-btn" style="background-color:#14cb00;">CHECK AGAIN</div>
                         <span>HAM!</span>
                     </div>
                 </center>
             </div>
-        {% endif %}
-        {% endfor %}
-{% else %}
-<script>
-            $('.front-animation').css("display","block");
-            $(document).ready(function(){
-                function dis()
-                {
-                    $('.front-animation').fadeOut(500);
-                };
-                window.setTimeout(dis,7000);
-            });
-</script>
-{% endif %}
+
 <div class="main">
     <!-- Header -->
     <header>
@@ -75,10 +54,10 @@
         <div class="head-one-div"><h1 class="head-one">SMS Spam Classifier</h1></div>
     <div class="input-form-div">
         <img class="mailbox-image" src="{% static 'images/sms2.png' %}" />
-        <form method="post" action="{% url 'checksms' %}">
+        <form>
         {% csrf_token %}
         <br/>
-        <input class="input-box1" type="text" name="smstext" placeholder=" Enter your SMS here.." required/>
+        <input class="input-box1" type="text" placeholder=" Enter your SMS here.." required/>
         <br/>
         <input class="check-btn-one" type="submit" value="CHECK"/>
     </form>
@@ -138,8 +117,56 @@ implemented as a web application to filter incoming messages into spam and ham. 
 
 </body>
 <script>
+
+            //Front page animation
+
+    $('.front-animation').css("display","block");
+        $(document).ready(function(){
+            function dis()
+            {
+                $('.front-animation').fadeOut(500);
+            };
+            window.setTimeout(dis,7000);
+     });
+
+            //Cancel button functionality
+
     $('.cancel-btn').click(function(){
-        $('.pop-up').css("display","none");
+        $('.pop-up').css("display","none");             //Background Semi Transparent Pop up
+        $('#p2').css("display","none");                 //Spam Pop up
+        $('#p4').css("display","none");                 //Ham Pop up
+        $('.lds-ellipsis').css("display","none");       //Loading animation
+    });
+
+
+            //Ajax Call
+
+    $(document).on('submit','form',function(e){
+        e.preventDefault();
+
+        $('.pop-up').css("display","block");                    //Background Semi Transparent Pop up
+        $('.lds-ellipsis').css("display","inline-block");       //Loading Animation
+        $.ajax({
+            type : 'POST',
+            url : '/checksms/',
+            data : {
+                    smstext : $('.input-box1').val(),
+                    csrfmiddlewaretoken : $('input[name=csrfmiddlewaretoken]').val()
+                    },
+            success:function(data){
+
+                if(data == 'ham')
+                {
+                    $('#p4').css("display","block");                //Ham Pop up
+                }
+                else if(data == 'spam')
+                {
+                    $('#p2').css("display","block");                //Spam Pop up
+                }
+                $('.input-box1').val('');
+            }
+
+        });
     });
 </script>
 </html>

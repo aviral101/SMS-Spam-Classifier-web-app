@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -9,7 +10,6 @@ def checksms(request):
     sms=request.POST.get('smstext','Guest')
     result=sms
     if result == '1':  #Ham
-        messages.success(request, '0')
+        return HttpResponse('ham')
     else:            #Spam
-        messages.warning(request, '0')
-    return redirect('index')
+        return HttpResponse('spam')

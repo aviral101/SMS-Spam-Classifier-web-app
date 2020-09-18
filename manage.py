@@ -7,7 +7,6 @@ import pickle
 def importAlgo():
     CV, NB = pickle.load(open('algo.pkl','rb'))
     return (CV,NB)
-
 CV,NB = importAlgo()
 
 def main():

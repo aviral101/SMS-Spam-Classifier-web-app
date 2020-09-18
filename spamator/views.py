@@ -14,11 +14,11 @@ def index(request):
 
 def checksms(request):
     sms=request.POST.get('smstext','Guest')
-    CV,NB = importAlgo()
+    CV, NB = importAlgo()
     text = CV.transform([sms])
     result = NB.predict(text)
-    context = {"Prediction":result}
-    res=context["Prediction"]
+    context = {"Prediction": result}
+    res = context['Prediction']
     if res == 1:  #Ham
         return HttpResponse('ham')
     else:            #Spam

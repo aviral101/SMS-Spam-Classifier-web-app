@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c3b0d5b-15eb-4ca3-862a-dbaed9d3eeef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/spamator/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/spamator/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myproject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/python.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

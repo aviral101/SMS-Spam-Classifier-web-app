@@ -32,7 +32,7 @@ def checksms(request):
     data = [message]
     vect = cv.transform(data).toarray()
     res = clf.predict(vect)
-    if res == 1:  #Ham
+    if res == 1:  #spam
         return HttpResponse('spam')
-    else:            #Spam
+    else:            #ham
         return HttpResponse('ham')
